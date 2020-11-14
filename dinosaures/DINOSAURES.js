@@ -870,9 +870,9 @@ ApplicationMain.create = function(config) {
 	ManifestResources.init(config);
 	var _this = app.meta;
 	if(__map_reserved["build"] != null) {
-		_this.setReserved("build","57");
+		_this.setReserved("build","61");
 	} else {
-		_this.h["build"] = "57";
+		_this.h["build"] = "61";
 	}
 	var _this1 = app.meta;
 	if(__map_reserved["company"] != null) {
@@ -4155,9 +4155,31 @@ var Main = function() {
 	this.blnBloquearHTML5 = false;
 	this.blnManual = false;
 	this.decDirection = 0;
-	this.size3 = 1.0;
-	this.size2 = 1.0;
-	this.size1 = 1.0;
+	this.size25 = 0.7;
+	this.size24 = 0.7;
+	this.size23 = 0.7;
+	this.size22 = 0.7;
+	this.size21 = 0.7;
+	this.size20 = 0.7;
+	this.size19 = 0.7;
+	this.size18 = 0.7;
+	this.size17 = 0.7;
+	this.size16 = 0.7;
+	this.size15 = 0.7;
+	this.size14 = 0.7;
+	this.size13 = 0.7;
+	this.size12 = 0.7;
+	this.size11 = 0.7;
+	this.size10 = 0.7;
+	this.size9 = 0.7;
+	this.size8 = 0.7;
+	this.size7 = 0.7;
+	this.size6 = 0.7;
+	this.size5 = 0.7;
+	this.size4 = 0.7;
+	this.size3 = 0.7;
+	this.size2 = 0.7;
+	this.size1 = 0.7;
 	this.blnDebugSensorX = false;
 	this.bln3DRender = true;
 	this.blnDebugBox2D = false;
@@ -4184,7 +4206,7 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 		this.light1.set_direction(new openfl_geom_Vector3D(0.5,0.5,0.5));
 		this.light1.set_specular(0.1);
 		this.light1.set_ambient(0.2);
-		this.light1.set_diffuse(0.7);
+		this.light1.set_diffuse(0.35);
 		this._view.get_scene().addChild(this.light1);
 		this.light2 = new away3d_lights_DirectionalLight();
 		this.light2.set_direction(new openfl_geom_Vector3D(-0.5,-0.5,-0.5));
@@ -4274,13 +4296,21 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 		this.bitmapBG.set_x(-this.gameDesvX / this.gameScale);
 		this.bitmapBG.set_y(-this.gameDesvY / this.gameScale);
 		this.addChild(this.bitmapBG);
-		var bitmapLOGO = new openfl_display_Bitmap(openfl_utils_Assets.getBitmapData("assets/play_off.png"));
+		var bitmapLOGO = new openfl_display_Bitmap(openfl_utils_Assets.getBitmapData("assets/dinosaures.png"));
 		bitmapLOGO.set_x(-(bitmapLOGO.get_width() / 2));
 		bitmapLOGO.set_y(-(bitmapLOGO.get_height() / 2));
+		this.spriteDINOS = new openfl_display_Sprite();
+		this.spriteDINOS.set_x(25 + bitmapLOGO.get_width() / 2);
+		this.spriteDINOS.set_y(Main.ALT - 1350 - bitmapLOGO.get_height() / 2);
+		this.spriteDINOS.addChild(bitmapLOGO);
+		this.addChild(this.spriteDINOS);
+		var bitmapLOGO1 = new openfl_display_Bitmap(openfl_utils_Assets.getBitmapData("assets/play_off.png"));
+		bitmapLOGO1.set_x(-(bitmapLOGO1.get_width() / 2));
+		bitmapLOGO1.set_y(-(bitmapLOGO1.get_height() / 2));
 		this.startButton = new openfl_display_Sprite();
 		this.startButton.set_x(540);
 		this.startButton.set_y(1450);
-		this.startButton.addChild(bitmapLOGO);
+		this.startButton.addChild(bitmapLOGO1);
 		this.addChild(this.startButton);
 		this.startButton.addEventListener("mouseUp",$bind(this,this.startButton_onMouseUp));
 		this.startButton.addEventListener("mouseOver",$bind(this,this.startButton_onMouseOver));
@@ -4288,6 +4318,7 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 	}
 	,startButton_onMouseUp: function(event) {
 		this.removeChild(this.startButton);
+		this.removeChild(this.spriteDINOS);
 		this.removeChild(this.bitmapBG);
 		this.demo1();
 	}
@@ -4305,14 +4336,58 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 		this.decDirection = 0;
 		this.camera.set_rotationZ(this.decDirection * 90);
 		this.createCircle1(200,100,70 * this.size1,true);
-		this.createCircle2(200,100,70 * this.size2,true);
-		this.createCircle3(200,100,70 * this.size3,true);
+		this.createCircle2(200,60,70 * this.size2,true);
+		this.createCircle3(200,20,70 * this.size3,true);
+		this.createCircle4(200,-20,70 * this.size4,true);
+		this.createCircle5(200,-60,70 * this.size5,true);
+		this.createCircle6(200,-100,70 * this.size6,true);
+		this.createCircle7(200,-140,70 * this.size7,true);
+		this.createCircle8(200,-180,70 * this.size8,true);
+		this.createCircle9(200,-220,70 * this.size9,true);
+		this.createCircle10(200,-260,70 * this.size10,true);
+		this.createCircle11(200,-300,70 * this.size11,true);
+		this.createCircle12(200,-340,70 * this.size12,true);
+		this.createCircle13(200,-380,70 * this.size13,true);
+		this.createCircle14(200,-420,70 * this.size14,true);
+		this.createCircle15(200,-460,70 * this.size15,true);
+		this.createCircle16(200,-500,70 * this.size16,true);
+		this.createCircle17(200,-540,70 * this.size17,true);
+		this.createCircle18(200,-580,70 * this.size18,true);
+		this.createCircle19(200,-620,70 * this.size19,true);
+		this.createCircle20(200,-660,70 * this.size20,true);
+		this.createCircle21(200,-700,70 * this.size21,true);
+		this.createCircle22(200,-740,70 * this.size22,true);
+		this.createCircle23(200,-780,70 * this.size23,true);
+		this.createCircle24(200,-820,70 * this.size24,true);
+		this.createCircle25(200,-860,70 * this.size25,true);
 		this.createWalls();
 		away3d_library_Asset3DLibrary.enableParser(away3d_loaders_parsers_AWDParser);
 		away3d_library_Asset3DLibrary.addEventListener("assetComplete",$bind(this,this.onAssetComplete));
-		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/TOKEN01.awd"));
-		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/TOKEN02.awd"));
-		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/TOKEN03.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/1.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/2.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/3.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/4.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/5.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/6.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/7.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/8.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/9.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/10.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/11.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/12.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/13.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/14.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/15.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/16.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/17.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/18.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/19.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/20.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/21.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/22.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/23.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/24.awd"));
+		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/25.awd"));
 		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/LVL01bg.awd"));
 		away3d_library_Asset3DLibrary.loadData(openfl_utils_Assets.getBytes("assets/LVL01.awd"));
 	}
@@ -4345,6 +4420,94 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 					this._token3.set_rotationZ(-this.token3.getAngle() * 180 / Math.PI);
 					this._token3.moveTo(this.token3.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token3.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
 				}
+				if(this._token4 != null) {
+					this._token4.set_rotationZ(-this.token4.getAngle() * 180 / Math.PI);
+					this._token4.moveTo(this.token4.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token4.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token5 != null) {
+					this._token5.set_rotationZ(-this.token5.getAngle() * 180 / Math.PI);
+					this._token5.moveTo(this.token5.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token5.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token6 != null) {
+					this._token6.set_rotationZ(-this.token6.getAngle() * 180 / Math.PI);
+					this._token6.moveTo(this.token6.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token6.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token7 != null) {
+					this._token7.set_rotationZ(-this.token7.getAngle() * 180 / Math.PI);
+					this._token7.moveTo(this.token7.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token7.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token8 != null) {
+					this._token8.set_rotationZ(-this.token8.getAngle() * 180 / Math.PI);
+					this._token8.moveTo(this.token8.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token8.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token9 != null) {
+					this._token9.set_rotationZ(-this.token9.getAngle() * 180 / Math.PI);
+					this._token9.moveTo(this.token9.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token9.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token10 != null) {
+					this._token10.set_rotationZ(-this.token10.getAngle() * 180 / Math.PI);
+					this._token10.moveTo(this.token10.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token10.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token11 != null) {
+					this._token11.set_rotationZ(-this.token11.getAngle() * 180 / Math.PI);
+					this._token11.moveTo(this.token11.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token11.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token12 != null) {
+					this._token12.set_rotationZ(-this.token12.getAngle() * 180 / Math.PI);
+					this._token12.moveTo(this.token12.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token12.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token13 != null) {
+					this._token13.set_rotationZ(-this.token13.getAngle() * 180 / Math.PI);
+					this._token13.moveTo(this.token13.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token13.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token14 != null) {
+					this._token14.set_rotationZ(-this.token14.getAngle() * 180 / Math.PI);
+					this._token14.moveTo(this.token14.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token14.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token15 != null) {
+					this._token15.set_rotationZ(-this.token15.getAngle() * 180 / Math.PI);
+					this._token15.moveTo(this.token15.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token15.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token16 != null) {
+					this._token16.set_rotationZ(-this.token16.getAngle() * 180 / Math.PI);
+					this._token16.moveTo(this.token16.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token16.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token17 != null) {
+					this._token17.set_rotationZ(-this.token17.getAngle() * 180 / Math.PI);
+					this._token17.moveTo(this.token17.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token17.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token18 != null) {
+					this._token18.set_rotationZ(-this.token18.getAngle() * 180 / Math.PI);
+					this._token18.moveTo(this.token18.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token18.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token19 != null) {
+					this._token19.set_rotationZ(-this.token19.getAngle() * 180 / Math.PI);
+					this._token19.moveTo(this.token19.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token19.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token20 != null) {
+					this._token20.set_rotationZ(-this.token20.getAngle() * 180 / Math.PI);
+					this._token20.moveTo(this.token20.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token20.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token21 != null) {
+					this._token21.set_rotationZ(-this.token21.getAngle() * 180 / Math.PI);
+					this._token21.moveTo(this.token21.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token21.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token22 != null) {
+					this._token22.set_rotationZ(-this.token22.getAngle() * 180 / Math.PI);
+					this._token22.moveTo(this.token22.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token22.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token23 != null) {
+					this._token23.set_rotationZ(-this.token23.getAngle() * 180 / Math.PI);
+					this._token23.moveTo(this.token23.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token23.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token24 != null) {
+					this._token24.set_rotationZ(-this.token24.getAngle() * 180 / Math.PI);
+					this._token24.moveTo(this.token24.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token24.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
+				if(this._token25 != null) {
+					this._token25.set_rotationZ(-this.token25.getAngle() * 180 / Math.PI);
+					this._token25.moveTo(this.token25.getPosition().x / Main.PHYSICS_SCALE - Main.AMPLE / 2,-this.token25.getPosition().y / Main.PHYSICS_SCALE + Main.ALT / 2,0);
+				}
 				if(this.token1.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token1.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token1.getPosition().x < -540 * Main.PHYSICS_SCALE) {
 					var oldSize = this.size1;
 					if(this.token1.getPosition().x > 810 * Main.PHYSICS_SCALE) {
@@ -4353,11 +4516,11 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 					if(this.token1.getPosition().x < 270 * Main.PHYSICS_SCALE) {
 						this.size1 *= 0.9;
 					}
-					if(this.size1 < 0.7) {
-						this.size1 = 0.7;
+					if(this.size1 < 0.35) {
+						this.size1 = 0.35;
 					}
-					if(this.size1 > 1.3) {
-						this.size1 = 1.3;
+					if(this.size1 > 0.95) {
+						this.size1 = 0.95;
 					}
 					this.token1.getWorld().destroyBody(this.token1);
 					this._token1.scale(this.size1 / oldSize);
@@ -4371,11 +4534,11 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 					if(this.token2.getPosition().x < 270 * Main.PHYSICS_SCALE) {
 						this.size2 *= 0.9;
 					}
-					if(this.size2 < 0.7) {
-						this.size2 = 0.7;
+					if(this.size2 < 0.35) {
+						this.size2 = 0.35;
 					}
-					if(this.size2 > 1.3) {
-						this.size2 = 1.3;
+					if(this.size2 > 0.95) {
+						this.size2 = 0.95;
 					}
 					this.token2.getWorld().destroyBody(this.token2);
 					this._token2.scale(this.size2 / oldSize1);
@@ -4389,15 +4552,411 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 					if(this.token3.getPosition().x < 270 * Main.PHYSICS_SCALE) {
 						this.size3 *= 0.9;
 					}
-					if(this.size3 < 0.7) {
-						this.size3 = 0.7;
+					if(this.size3 < 0.35) {
+						this.size3 = 0.35;
 					}
-					if(this.size3 > 1.3) {
-						this.size3 = 1.3;
+					if(this.size3 > 0.95) {
+						this.size3 = 0.95;
 					}
 					this.token3.getWorld().destroyBody(this.token3);
 					this._token3.scale(this.size3 / oldSize2);
 					this.createCircle3(200,100,70 * this.size3,true);
+				}
+				if(this.token4.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token4.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token4.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize3 = this.size4;
+					if(this.token4.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size4 *= 1.1;
+					}
+					if(this.token4.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size4 *= 0.9;
+					}
+					if(this.size4 < 0.35) {
+						this.size4 = 0.35;
+					}
+					if(this.size4 > 0.95) {
+						this.size4 = 0.95;
+					}
+					this.token4.getWorld().destroyBody(this.token4);
+					this._token4.scale(this.size4 / oldSize3);
+					this.createCircle4(200,100,70 * this.size4,true);
+				}
+				if(this.token5.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token5.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token5.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize4 = this.size5;
+					if(this.token5.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size5 *= 1.1;
+					}
+					if(this.token5.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size5 *= 0.9;
+					}
+					if(this.size5 < 0.35) {
+						this.size5 = 0.35;
+					}
+					if(this.size5 > 0.95) {
+						this.size5 = 0.95;
+					}
+					this.token5.getWorld().destroyBody(this.token5);
+					this._token5.scale(this.size5 / oldSize4);
+					this.createCircle5(200,100,70 * this.size5,true);
+				}
+				if(this.token6.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token6.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token6.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize5 = this.size6;
+					if(this.token6.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size6 *= 1.1;
+					}
+					if(this.token6.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size6 *= 0.9;
+					}
+					if(this.size6 < 0.35) {
+						this.size6 = 0.35;
+					}
+					if(this.size6 > 0.95) {
+						this.size6 = 0.95;
+					}
+					this.token6.getWorld().destroyBody(this.token6);
+					this._token6.scale(this.size6 / oldSize5);
+					this.createCircle6(200,100,70 * this.size6,true);
+				}
+				if(this.token7.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token7.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token7.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize6 = this.size7;
+					if(this.token7.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size7 *= 1.1;
+					}
+					if(this.token7.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size7 *= 0.9;
+					}
+					if(this.size7 < 0.35) {
+						this.size7 = 0.35;
+					}
+					if(this.size7 > 0.95) {
+						this.size7 = 0.95;
+					}
+					this.token7.getWorld().destroyBody(this.token7);
+					this._token7.scale(this.size7 / oldSize6);
+					this.createCircle7(200,100,70 * this.size7,true);
+				}
+				if(this.token8.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token8.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token8.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize7 = this.size8;
+					if(this.token8.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size8 *= 1.1;
+					}
+					if(this.token8.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size8 *= 0.9;
+					}
+					if(this.size8 < 0.35) {
+						this.size8 = 0.35;
+					}
+					if(this.size8 > 0.95) {
+						this.size8 = 0.95;
+					}
+					this.token8.getWorld().destroyBody(this.token8);
+					this._token8.scale(this.size8 / oldSize7);
+					this.createCircle8(200,100,70 * this.size8,true);
+				}
+				if(this.token9.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token9.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token9.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize8 = this.size9;
+					if(this.token9.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size9 *= 1.1;
+					}
+					if(this.token9.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size9 *= 0.9;
+					}
+					if(this.size9 < 0.35) {
+						this.size9 = 0.35;
+					}
+					if(this.size9 > 0.95) {
+						this.size9 = 0.95;
+					}
+					this.token9.getWorld().destroyBody(this.token9);
+					this._token9.scale(this.size9 / oldSize8);
+					this.createCircle9(200,100,70 * this.size9,true);
+				}
+				if(this.token10.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token10.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token10.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize9 = this.size10;
+					if(this.token10.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size10 *= 1.1;
+					}
+					if(this.token10.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size10 *= 0.9;
+					}
+					if(this.size10 < 0.35) {
+						this.size10 = 0.35;
+					}
+					if(this.size10 > 0.95) {
+						this.size10 = 0.95;
+					}
+					this.token10.getWorld().destroyBody(this.token10);
+					this._token10.scale(this.size10 / oldSize9);
+					this.createCircle10(200,100,70 * this.size10,true);
+				}
+				if(this.token11.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token11.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token11.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize10 = this.size11;
+					if(this.token11.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size11 *= 1.1;
+					}
+					if(this.token11.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size11 *= 0.9;
+					}
+					if(this.size11 < 0.35) {
+						this.size11 = 0.35;
+					}
+					if(this.size11 > 0.95) {
+						this.size11 = 0.95;
+					}
+					this.token11.getWorld().destroyBody(this.token11);
+					this._token11.scale(this.size11 / oldSize10);
+					this.createCircle11(200,100,70 * this.size11,true);
+				}
+				if(this.token12.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token12.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token12.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize11 = this.size12;
+					if(this.token12.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size12 *= 1.1;
+					}
+					if(this.token12.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size12 *= 0.9;
+					}
+					if(this.size12 < 0.35) {
+						this.size12 = 0.35;
+					}
+					if(this.size12 > 0.95) {
+						this.size12 = 0.95;
+					}
+					this.token12.getWorld().destroyBody(this.token12);
+					this._token12.scale(this.size12 / oldSize11);
+					this.createCircle12(200,100,70 * this.size12,true);
+				}
+				if(this.token13.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token13.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token13.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize12 = this.size13;
+					if(this.token13.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size13 *= 1.1;
+					}
+					if(this.token13.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size13 *= 0.9;
+					}
+					if(this.size13 < 0.35) {
+						this.size13 = 0.35;
+					}
+					if(this.size13 > 0.95) {
+						this.size13 = 0.95;
+					}
+					this.token13.getWorld().destroyBody(this.token13);
+					this._token13.scale(this.size13 / oldSize12);
+					this.createCircle13(200,100,70 * this.size13,true);
+				}
+				if(this.token14.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token14.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token14.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize13 = this.size14;
+					if(this.token14.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size14 *= 1.1;
+					}
+					if(this.token14.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size14 *= 0.9;
+					}
+					if(this.size14 < 0.35) {
+						this.size14 = 0.35;
+					}
+					if(this.size14 > 0.95) {
+						this.size14 = 0.95;
+					}
+					this.token14.getWorld().destroyBody(this.token14);
+					this._token14.scale(this.size14 / oldSize13);
+					this.createCircle14(200,100,70 * this.size14,true);
+				}
+				if(this.token15.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token15.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token15.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize14 = this.size15;
+					if(this.token15.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size15 *= 1.1;
+					}
+					if(this.token15.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size15 *= 0.9;
+					}
+					if(this.size15 < 0.35) {
+						this.size15 = 0.35;
+					}
+					if(this.size15 > 0.95) {
+						this.size15 = 0.95;
+					}
+					this.token15.getWorld().destroyBody(this.token15);
+					this._token15.scale(this.size15 / oldSize14);
+					this.createCircle15(200,100,70 * this.size15,true);
+				}
+				if(this.token16.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token16.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token16.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize15 = this.size16;
+					if(this.token16.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size16 *= 1.1;
+					}
+					if(this.token16.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size16 *= 0.9;
+					}
+					if(this.size16 < 0.35) {
+						this.size16 = 0.35;
+					}
+					if(this.size16 > 0.95) {
+						this.size16 = 0.95;
+					}
+					this.token16.getWorld().destroyBody(this.token16);
+					this._token16.scale(this.size16 / oldSize15);
+					this.createCircle16(200,100,70 * this.size16,true);
+				}
+				if(this.token17.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token17.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token17.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize16 = this.size17;
+					if(this.token17.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size17 *= 1.1;
+					}
+					if(this.token17.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size17 *= 0.9;
+					}
+					if(this.size17 < 0.35) {
+						this.size17 = 0.35;
+					}
+					if(this.size17 > 0.95) {
+						this.size17 = 0.95;
+					}
+					this.token17.getWorld().destroyBody(this.token17);
+					this._token17.scale(this.size17 / oldSize16);
+					this.createCircle17(200,100,70 * this.size17,true);
+				}
+				if(this.token18.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token18.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token18.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize17 = this.size18;
+					if(this.token18.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size18 *= 1.1;
+					}
+					if(this.token18.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size18 *= 0.9;
+					}
+					if(this.size18 < 0.35) {
+						this.size18 = 0.35;
+					}
+					if(this.size18 > 0.95) {
+						this.size18 = 0.95;
+					}
+					this.token18.getWorld().destroyBody(this.token18);
+					this._token18.scale(this.size18 / oldSize17);
+					this.createCircle18(200,100,70 * this.size18,true);
+				}
+				if(this.token19.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token19.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token19.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize18 = this.size19;
+					if(this.token19.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size19 *= 1.1;
+					}
+					if(this.token19.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size19 *= 0.9;
+					}
+					if(this.size19 < 0.35) {
+						this.size19 = 0.35;
+					}
+					if(this.size19 > 0.95) {
+						this.size19 = 0.95;
+					}
+					this.token19.getWorld().destroyBody(this.token19);
+					this._token19.scale(this.size19 / oldSize18);
+					this.createCircle19(200,100,70 * this.size19,true);
+				}
+				if(this.token20.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token20.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token20.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize19 = this.size20;
+					if(this.token20.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size20 *= 1.1;
+					}
+					if(this.token20.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size20 *= 0.9;
+					}
+					if(this.size20 < 0.35) {
+						this.size20 = 0.35;
+					}
+					if(this.size20 > 0.95) {
+						this.size20 = 0.95;
+					}
+					this.token20.getWorld().destroyBody(this.token20);
+					this._token20.scale(this.size20 / oldSize19);
+					this.createCircle20(200,100,70 * this.size20,true);
+				}
+				if(this.token21.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token21.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token21.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize20 = this.size21;
+					if(this.token21.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size21 *= 1.1;
+					}
+					if(this.token21.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size21 *= 0.9;
+					}
+					if(this.size21 < 0.35) {
+						this.size21 = 0.35;
+					}
+					if(this.size21 > 0.95) {
+						this.size21 = 0.95;
+					}
+					this.token21.getWorld().destroyBody(this.token21);
+					this._token21.scale(this.size21 / oldSize20);
+					this.createCircle21(200,100,70 * this.size21,true);
+				}
+				if(this.token22.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token22.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token22.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize21 = this.size22;
+					if(this.token22.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size22 *= 1.1;
+					}
+					if(this.token22.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size22 *= 0.9;
+					}
+					if(this.size22 < 0.35) {
+						this.size22 = 0.35;
+					}
+					if(this.size22 > 0.95) {
+						this.size22 = 0.95;
+					}
+					this.token22.getWorld().destroyBody(this.token22);
+					this._token22.scale(this.size22 / oldSize21);
+					this.createCircle22(200,100,70 * this.size22,true);
+				}
+				if(this.token23.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token23.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token23.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize22 = this.size23;
+					if(this.token23.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size23 *= 1.1;
+					}
+					if(this.token23.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size23 *= 0.9;
+					}
+					if(this.size23 < 0.35) {
+						this.size23 = 0.35;
+					}
+					if(this.size23 > 0.95) {
+						this.size23 = 0.95;
+					}
+					this.token23.getWorld().destroyBody(this.token23);
+					this._token23.scale(this.size23 / oldSize22);
+					this.createCircle23(200,100,70 * this.size23,true);
+				}
+				if(this.token24.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token24.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token24.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize23 = this.size24;
+					if(this.token24.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size24 *= 1.1;
+					}
+					if(this.token24.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size24 *= 0.9;
+					}
+					if(this.size24 < 0.35) {
+						this.size24 = 0.35;
+					}
+					if(this.size24 > 0.95) {
+						this.size24 = 0.95;
+					}
+					this.token24.getWorld().destroyBody(this.token24);
+					this._token24.scale(this.size24 / oldSize23);
+					this.createCircle24(200,100,70 * this.size24,true);
+				}
+				if(this.token25.getPosition().y > 1920 * Main.PHYSICS_SCALE || this.token25.getPosition().x > 1620 * Main.PHYSICS_SCALE || this.token25.getPosition().x < -540 * Main.PHYSICS_SCALE) {
+					var oldSize24 = this.size25;
+					if(this.token25.getPosition().x > 810 * Main.PHYSICS_SCALE) {
+						this.size25 *= 1.1;
+					}
+					if(this.token25.getPosition().x < 270 * Main.PHYSICS_SCALE) {
+						this.size25 *= 0.9;
+					}
+					if(this.size25 < 0.35) {
+						this.size25 = 0.35;
+					}
+					if(this.size25 > 0.95) {
+						this.size25 = 0.95;
+					}
+					this.token25.getWorld().destroyBody(this.token25);
+					this._token25.scale(this.size25 / oldSize24);
+					this.createCircle25(200,100,70 * this.size25,true);
 				}
 				break;
 			case "menu":
@@ -4476,20 +5035,130 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 			break;
 		case "mesh":
 			switch(event.get_asset().get_name()) {
-			case "Circle":
+			case "1":
 				this._token1 = js_Boot.__cast(asset , away3d_entities_Mesh);
 				this._view.get_scene().addChild(this._token1);
 				this._token1.scale(72.0 * this.size1);
 				break;
-			case "Circle2":
+			case "10":
+				this._token10 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token10);
+				this._token10.scale(72.0 * this.size10);
+				break;
+			case "11":
+				this._token11 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token11);
+				this._token11.scale(72.0 * this.size11);
+				break;
+			case "12":
+				this._token12 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token12);
+				this._token12.scale(72.0 * this.size12);
+				break;
+			case "13":
+				this._token13 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token13);
+				this._token13.scale(72.0 * this.size13);
+				break;
+			case "14":
+				this._token14 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token14);
+				this._token14.scale(72.0 * this.size14);
+				break;
+			case "15":
+				this._token15 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token15);
+				this._token15.scale(72.0 * this.size15);
+				break;
+			case "16":
+				this._token16 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token16);
+				this._token16.scale(72.0 * this.size16);
+				break;
+			case "17":
+				this._token17 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token17);
+				this._token17.scale(72.0 * this.size17);
+				break;
+			case "18":
+				this._token18 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token18);
+				this._token18.scale(72.0 * this.size18);
+				break;
+			case "19":
+				this._token19 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token19);
+				this._token19.scale(72.0 * this.size19);
+				break;
+			case "2":
 				this._token2 = js_Boot.__cast(asset , away3d_entities_Mesh);
 				this._view.get_scene().addChild(this._token2);
 				this._token2.scale(72.0 * this.size2);
 				break;
-			case "Circle3":
+			case "20":
+				this._token20 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token20);
+				this._token20.scale(72.0 * this.size20);
+				break;
+			case "21":
+				this._token21 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token21);
+				this._token21.scale(72.0 * this.size21);
+				break;
+			case "22":
+				this._token22 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token22);
+				this._token22.scale(72.0 * this.size2);
+				break;
+			case "23":
+				this._token23 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token23);
+				this._token23.scale(72.0 * this.size23);
+				break;
+			case "24":
+				this._token24 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token24);
+				this._token24.scale(72.0 * this.size24);
+				break;
+			case "25":
+				this._token25 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token25);
+				this._token25.scale(72.0 * this.size25);
+				break;
+			case "3":
 				this._token3 = js_Boot.__cast(asset , away3d_entities_Mesh);
 				this._view.get_scene().addChild(this._token3);
 				this._token3.scale(72.0 * this.size3);
+				break;
+			case "4":
+				this._token4 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token4);
+				this._token4.scale(72.0 * this.size4);
+				break;
+			case "5":
+				this._token5 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token5);
+				this._token5.scale(72.0 * this.size5);
+				break;
+			case "6":
+				this._token6 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token6);
+				this._token6.scale(72.0 * this.size6);
+				break;
+			case "7":
+				this._token7 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token7);
+				this._token7.scale(72.0 * this.size7);
+				break;
+			case "8":
+				this._token8 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token8);
+				this._token8.scale(72.0 * this.size8);
+				break;
+			case "9":
+				this._token9 = js_Boot.__cast(asset , away3d_entities_Mesh);
+				this._view.get_scene().addChild(this._token9);
+				this._token9.scale(72.0 * this.size9);
 				break;
 			case "Cubo":
 				this._lvlbg = js_Boot.__cast(asset , away3d_entities_Mesh);
@@ -4684,6 +5353,358 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 		this.token3.createFixture(fixtureDefinition);
 		this.token3.setSleepingAllowed(false);
 	}
+	,createCircle4: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token4 = this.World.createBody(bodyDefinition);
+		this.token4.createFixture(fixtureDefinition);
+		this.token4.setSleepingAllowed(false);
+	}
+	,createCircle5: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token5 = this.World.createBody(bodyDefinition);
+		this.token5.createFixture(fixtureDefinition);
+		this.token5.setSleepingAllowed(false);
+	}
+	,createCircle6: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token6 = this.World.createBody(bodyDefinition);
+		this.token6.createFixture(fixtureDefinition);
+		this.token6.setSleepingAllowed(false);
+	}
+	,createCircle7: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token7 = this.World.createBody(bodyDefinition);
+		this.token7.createFixture(fixtureDefinition);
+		this.token7.setSleepingAllowed(false);
+	}
+	,createCircle8: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token8 = this.World.createBody(bodyDefinition);
+		this.token8.createFixture(fixtureDefinition);
+		this.token8.setSleepingAllowed(false);
+	}
+	,createCircle9: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token9 = this.World.createBody(bodyDefinition);
+		this.token9.createFixture(fixtureDefinition);
+		this.token9.setSleepingAllowed(false);
+	}
+	,createCircle10: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token10 = this.World.createBody(bodyDefinition);
+		this.token10.createFixture(fixtureDefinition);
+		this.token10.setSleepingAllowed(false);
+	}
+	,createCircle11: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token11 = this.World.createBody(bodyDefinition);
+		this.token11.createFixture(fixtureDefinition);
+		this.token11.setSleepingAllowed(false);
+	}
+	,createCircle12: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token12 = this.World.createBody(bodyDefinition);
+		this.token12.createFixture(fixtureDefinition);
+		this.token12.setSleepingAllowed(false);
+	}
+	,createCircle13: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token13 = this.World.createBody(bodyDefinition);
+		this.token13.createFixture(fixtureDefinition);
+		this.token13.setSleepingAllowed(false);
+	}
+	,createCircle14: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token14 = this.World.createBody(bodyDefinition);
+		this.token14.createFixture(fixtureDefinition);
+		this.token14.setSleepingAllowed(false);
+	}
+	,createCircle15: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token15 = this.World.createBody(bodyDefinition);
+		this.token15.createFixture(fixtureDefinition);
+		this.token15.setSleepingAllowed(false);
+	}
+	,createCircle16: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token16 = this.World.createBody(bodyDefinition);
+		this.token16.createFixture(fixtureDefinition);
+		this.token16.setSleepingAllowed(false);
+	}
+	,createCircle17: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token17 = this.World.createBody(bodyDefinition);
+		this.token17.createFixture(fixtureDefinition);
+		this.token17.setSleepingAllowed(false);
+	}
+	,createCircle18: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token18 = this.World.createBody(bodyDefinition);
+		this.token18.createFixture(fixtureDefinition);
+		this.token18.setSleepingAllowed(false);
+	}
+	,createCircle19: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token19 = this.World.createBody(bodyDefinition);
+		this.token19.createFixture(fixtureDefinition);
+		this.token19.setSleepingAllowed(false);
+	}
+	,createCircle20: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token20 = this.World.createBody(bodyDefinition);
+		this.token20.createFixture(fixtureDefinition);
+		this.token20.setSleepingAllowed(false);
+	}
+	,createCircle21: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token21 = this.World.createBody(bodyDefinition);
+		this.token21.createFixture(fixtureDefinition);
+		this.token21.setSleepingAllowed(false);
+	}
+	,createCircle22: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token22 = this.World.createBody(bodyDefinition);
+		this.token22.createFixture(fixtureDefinition);
+		this.token22.setSleepingAllowed(false);
+	}
+	,createCircle23: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token23 = this.World.createBody(bodyDefinition);
+		this.token23.createFixture(fixtureDefinition);
+		this.token23.setSleepingAllowed(false);
+	}
+	,createCircle24: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token24 = this.World.createBody(bodyDefinition);
+		this.token24.createFixture(fixtureDefinition);
+		this.token24.setSleepingAllowed(false);
+	}
+	,createCircle25: function(x,y,radius,dynamicBody) {
+		var bodyDefinition = new box2D_dynamics_B2BodyDef();
+		bodyDefinition.position.set(x * Main.PHYSICS_SCALE,y * Main.PHYSICS_SCALE);
+		if(dynamicBody) {
+			bodyDefinition.type = box2D_dynamics_B2Body.b2_dynamicBody;
+		}
+		var circle = new box2D_collision_shapes_B2CircleShape(radius * Main.PHYSICS_SCALE);
+		var fixtureDefinition = new box2D_dynamics_B2FixtureDef();
+		fixtureDefinition.shape = circle;
+		fixtureDefinition.density = 15;
+		fixtureDefinition.friction = 1;
+		fixtureDefinition.restitution = 0.333;
+		this.token25 = this.World.createBody(bodyDefinition);
+		this.token25.createFixture(fixtureDefinition);
+		this.token25.setSleepingAllowed(false);
+	}
 	,__class__: Main
 });
 var DocumentClass = function(current) {
@@ -4871,7 +5892,7 @@ ManifestResources.init = function(config) {
 		ManifestResources.rootPath = "./";
 	}
 	var bundle;
-	var data = "{\"name\":null,\"assets\":\"aoy4:pathy19:assets%2FGEAR01.awdy4:sizei2116y4:typey6:BINARYy2:idR1y7:preloadtgoR0y25:assets%2Fhtml5warning.pngR2i17275R3y5:IMAGER5R7R6tgoR0y20:assets%2Flogo_01.pngR2i2940R3R8R5R9R6tgoR0y20:assets%2Flogo_02.pngR2i5436R3R8R5R10R6tgoR0y20:assets%2Flogo_03.pngR2i4440R3R8R5R11R6tgoR0y20:assets%2Flogo_04.pngR2i3176R3R8R5R12R6tgoR0y20:assets%2Flogo_05.pngR2i3865R3R8R5R13R6tgoR0y20:assets%2Flogo_06.pngR2i4468R3R8R5R14R6tgoR0y20:assets%2Flogo_07.pngR2i6209R3R8R5R15R6tgoR0y20:assets%2Flogo_08.pngR2i4092R3R8R5R16R6tgoR0y20:assets%2Flogo_09.pngR2i4130R3R8R5R17R6tgoR0y20:assets%2Flogo_10.pngR2i12641R3R8R5R18R6tgoR0y20:assets%2Flogo_11.pngR2i26212R3R8R5R19R6tgoR0y20:assets%2Flogo_12.pngR2i24906R3R8R5R20R6tgoR0y20:assets%2Flogo_13.pngR2i16743R3R8R5R21R6tgoR0y20:assets%2Flogo_14.pngR2i20032R3R8R5R22R6tgoR0y20:assets%2Flogo_15.pngR2i20336R3R8R5R23R6tgoR0y20:assets%2Flogo_16.pngR2i29660R3R8R5R24R6tgoR0y20:assets%2Flogo_17.pngR2i17573R3R8R5R25R6tgoR0y20:assets%2Flogo_18.pngR2i17447R3R8R5R26R6tgoR0y18:assets%2FLVL01.awdR2i47056R3R4R5R27R6tgoR0y20:assets%2FLVL01bg.awdR2i76477R3R4R5R28R6tgoR0y20:assets%2Fmenu_bg.jpgR2i294095R3R8R5R29R6tgoR0y21:assets%2Fplay_off.pngR2i78710R3R8R5R30R6tgoR0y20:assets%2Fplay_on.pngR2i76082R3R8R5R31R6tgoR0y20:assets%2FTOKEN01.awdR2i58745R3R4R5R32R6tgoR0y20:assets%2FTOKEN02.awdR2i49377R3R4R5R33R6tgoR0y20:assets%2FTOKEN03.awdR2i49379R3R4R5R34R6tgh\",\"rootPath\":null,\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
+	var data = "{\"name\":null,\"assets\":\"aoy4:pathy14:assets%2F1.awdy4:sizei30337y4:typey6:BINARYy2:idR1y7:preloadtgoR0y15:assets%2F10.awdR2i33365R3R4R5R7R6tgoR0y15:assets%2F11.awdR2i30952R3R4R5R8R6tgoR0y15:assets%2F12.awdR2i31268R3R4R5R9R6tgoR0y15:assets%2F13.awdR2i30086R3R4R5R10R6tgoR0y15:assets%2F14.awdR2i32288R3R4R5R11R6tgoR0y15:assets%2F15.awdR2i32237R3R4R5R12R6tgoR0y15:assets%2F16.awdR2i31602R3R4R5R13R6tgoR0y15:assets%2F17.awdR2i29947R3R4R5R14R6tgoR0y15:assets%2F18.awdR2i31053R3R4R5R15R6tgoR0y15:assets%2F19.awdR2i33335R3R4R5R16R6tgoR0y14:assets%2F2.awdR2i32440R3R4R5R17R6tgoR0y15:assets%2F20.awdR2i33264R3R4R5R18R6tgoR0y15:assets%2F21.awdR2i37164R3R4R5R19R6tgoR0y15:assets%2F22.awdR2i31721R3R4R5R20R6tgoR0y15:assets%2F23.awdR2i30235R3R4R5R21R6tgoR0y15:assets%2F24.awdR2i32225R3R4R5R22R6tgoR0y15:assets%2F25.awdR2i33167R3R4R5R23R6tgoR0y14:assets%2F3.awdR2i30178R3R4R5R24R6tgoR0y14:assets%2F4.awdR2i32196R3R4R5R25R6tgoR0y14:assets%2F5.awdR2i32315R3R4R5R26R6tgoR0y14:assets%2F6.awdR2i32011R3R4R5R27R6tgoR0y14:assets%2F7.awdR2i29754R3R4R5R28R6tgoR0y14:assets%2F8.awdR2i31510R3R4R5R29R6tgoR0y14:assets%2F9.awdR2i30283R3R4R5R30R6tgoR0y23:assets%2Fdinosaures.pngR2i133017R3y5:IMAGER5R31R6tgoR0y19:assets%2FGEAR01.awdR2i2116R3R4R5R33R6tgoR0y25:assets%2Fhtml5warning.pngR2i17275R3R32R5R34R6tgoR0y20:assets%2Flogo_01.pngR2i2940R3R32R5R35R6tgoR0y20:assets%2Flogo_02.pngR2i5436R3R32R5R36R6tgoR0y20:assets%2Flogo_03.pngR2i4440R3R32R5R37R6tgoR0y20:assets%2Flogo_04.pngR2i3176R3R32R5R38R6tgoR0y20:assets%2Flogo_05.pngR2i3865R3R32R5R39R6tgoR0y20:assets%2Flogo_06.pngR2i4468R3R32R5R40R6tgoR0y20:assets%2Flogo_07.pngR2i6209R3R32R5R41R6tgoR0y20:assets%2Flogo_08.pngR2i4092R3R32R5R42R6tgoR0y20:assets%2Flogo_09.pngR2i4130R3R32R5R43R6tgoR0y20:assets%2Flogo_10.pngR2i12641R3R32R5R44R6tgoR0y20:assets%2Flogo_11.pngR2i26212R3R32R5R45R6tgoR0y20:assets%2Flogo_12.pngR2i24906R3R32R5R46R6tgoR0y20:assets%2Flogo_13.pngR2i16743R3R32R5R47R6tgoR0y20:assets%2Flogo_14.pngR2i20032R3R32R5R48R6tgoR0y20:assets%2Flogo_15.pngR2i20336R3R32R5R49R6tgoR0y20:assets%2Flogo_16.pngR2i29660R3R32R5R50R6tgoR0y20:assets%2Flogo_17.pngR2i17573R3R32R5R51R6tgoR0y20:assets%2Flogo_18.pngR2i17447R3R32R5R52R6tgoR0y18:assets%2FLVL01.awdR2i47056R3R4R5R53R6tgoR0y20:assets%2FLVL01bg.awdR2i76477R3R4R5R54R6tgoR0y20:assets%2Fmenu_bg.jpgR2i246433R3R32R5R55R6tgoR0y21:assets%2Fplay_off.pngR2i78710R3R32R5R56R6tgoR0y20:assets%2Fplay_on.pngR2i76082R3R32R5R57R6tgoR0y20:assets%2FTOKEN01.awdR2i58745R3R4R5R58R6tgoR0y20:assets%2FTOKEN02.awdR2i49377R3R4R5R59R6tgoR0y20:assets%2FTOKEN03.awdR2i49379R3R4R5R60R6tgh\",\"rootPath\":null,\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
 	var manifest = lime_utils_AssetManifest.parse(data,ManifestResources.rootPath);
 	var library = lime_utils_AssetLibrary.fromManifest(manifest);
 	lime_utils_Assets.registerLibrary("default",library);
@@ -66436,7 +67457,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 977165;
+	this.version = 124496;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";
